@@ -94,7 +94,7 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
-
+  K_CAN_FramesInit();
   /* USER CODE END Init */
 
   /* Configure the system clock */
