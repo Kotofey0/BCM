@@ -58,7 +58,24 @@ static void MX_CAN_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 
+	if(htim->Instance == TIM1){ //1ms
+
+		HAL_GPIO_WritePin(GPIOB, LD_U_Pin, GPIO_PIN_SET);
+
+		globalTimer_ms += 10;
+
+		task_10ms();
+		if((globalTimer_ms % 200) == 0) task_200ms();
+		if((globalTimer_ms % 500) == 0) task_500ms();
+		if((globalTimer_ms % 1000) == 0) task_1000ms();
+
+		HAL_GPIO_WritePin(GPIOB, LD_U_Pin, GPIO_PIN_RESET);
+	}
+
+
+}
 /* USER CODE END 0 */
 
 /**
