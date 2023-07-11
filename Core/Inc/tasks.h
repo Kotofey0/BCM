@@ -8,7 +8,6 @@
 #ifndef INC_TASKS_H_
 #define INC_TASKS_H_
 
-//#include "stm32f1xx_hal.h"
 #include "can.h"
 
 void task_1ms(void);
