@@ -8,7 +8,7 @@
 #ifndef INC_GLOBALS_H_
 #define INC_GLOBALS_H_
 
-#include "stm32f3xx_hal.h"
+#include "stm32f1xx_hal.h"
 
 extern uint8_t s_ignition;
 extern uint8_t s_light_parking;

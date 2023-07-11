@@ -1,7 +1,7 @@
 /* USER CODE BEGIN Header */
 /**
   ******************************************************************************
-  * @file    stm32f3xx_it.c
+  * @file    stm32f1xx_it.c
   * @brief   Interrupt Service Routines.
   ******************************************************************************
   * @attention
@@ -19,7 +19,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "stm32f3xx_it.h"
+#include "stm32f1xx_it.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 /* USER CODE END Includes */
@@ -55,13 +55,13 @@
 /* USER CODE END 0 */
 
 /* External variables --------------------------------------------------------*/
-extern CAN_HandleTypeDef hcan;
+
 /* USER CODE BEGIN EV */
 
 /* USER CODE END EV */
 
 /******************************************************************************/
-/*           Cortex-M4 Processor Interruption and Exception Handlers          */
+/*           Cortex-M3 Processor Interruption and Exception Handlers          */
 /******************************************************************************/
 /**
   * @brief This function handles Non maskable interrupt.
@@ -109,7 +109,7 @@ void MemManage_Handler(void)
 }
 
 /**
-  * @brief This function handles Pre-fetch fault, memory access fault.
+  * @brief This function handles Prefetch fault, memory access fault.
   */
 void BusFault_Handler(void)
 {
@@ -192,67 +192,11 @@ void SysTick_Handler(void)
 }
 
 /******************************************************************************/
-/* STM32F3xx Peripheral Interrupt Handlers                                    */
+/* STM32F1xx Peripheral Interrupt Handlers                                    */
 /* Add here the Interrupt Handlers for the used peripherals.                  */
 /* For the available peripheral interrupt handler names,                      */
-/* please refer to the startup file (startup_stm32f3xx.s).                    */
+/* please refer to the startup file (startup_stm32f1xx.s).                    */
 /******************************************************************************/
-
-/**
-  * @brief This function handles CAN TX interrupt.
-  */
-void CAN_TX_IRQHandler(void)
-{
-  /* USER CODE BEGIN CAN_TX_IRQn 0 */
-
-  /* USER CODE END CAN_TX_IRQn 0 */
-  HAL_CAN_IRQHandler(&hcan);
-  /* USER CODE BEGIN CAN_TX_IRQn 1 */
-
-  /* USER CODE END CAN_TX_IRQn 1 */
-}
-
-/**
-  * @brief This function handles CAN RX0 interrupt.
-  */
-void CAN_RX0_IRQHandler(void)
-{
-  /* USER CODE BEGIN CAN_RX0_IRQn 0 */
-
-  /* USER CODE END CAN_RX0_IRQn 0 */
-  HAL_CAN_IRQHandler(&hcan);
-  /* USER CODE BEGIN CAN_RX0_IRQn 1 */
-
-  /* USER CODE END CAN_RX0_IRQn 1 */
-}
-
-/**
-  * @brief This function handles CAN RX1 interrupt.
-  */
-void CAN_RX1_IRQHandler(void)
-{
-  /* USER CODE BEGIN CAN_RX1_IRQn 0 */
-
-  /* USER CODE END CAN_RX1_IRQn 0 */
-  HAL_CAN_IRQHandler(&hcan);
-  /* USER CODE BEGIN CAN_RX1_IRQn 1 */
-
-  /* USER CODE END CAN_RX1_IRQn 1 */
-}
-
-/**
-  * @brief This function handles CAN SCE interrupt.
-  */
-void CAN_SCE_IRQHandler(void)
-{
-  /* USER CODE BEGIN CAN_SCE_IRQn 0 */
-
-  /* USER CODE END CAN_SCE_IRQn 0 */
-  HAL_CAN_IRQHandler(&hcan);
-  /* USER CODE BEGIN CAN_SCE_IRQn 1 */
-
-  /* USER CODE END CAN_SCE_IRQn 1 */
-}
 
 /* USER CODE BEGIN 1 */
 
